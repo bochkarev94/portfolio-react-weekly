@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import WeeklyForm from './components/weeklyForm';
+import WeeklyList from './components/weeklyList';
 
 function App() {
   return (
     <div className="weekly__app">
-      <WeeklyForm/>
+      <WeeklyList/>
     </div>
   );
 }
