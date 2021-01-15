@@ -15,6 +15,19 @@ function WeeklyList() {
         setList(newList); 
     };
 
+    const removeList = (id) => {
+        const removeArr = [...lists].filter(list => list.id !== id)
+
+        setList(removeArr)
+    }
+    const upList = (listId, newList) => {
+
+        if (!newList.text || /^\s*$/.test(newList.text)) {
+            return;
+        };
+        setList(prev => prev.map(item => (item.id === listId ? newList: item)));
+    };
+
     const completeList = (id) => {
         let upLists = lists.map(list => {
             if (list.id === id) {
@@ -23,7 +36,7 @@ function WeeklyList() {
             return list;
         })
         setList(upLists);
-    }
+    };
 
     return (
         <div>
@@ -32,6 +45,8 @@ function WeeklyList() {
            <Weekly
             lists = {lists}
             completeList = {completeList}
+            removeList={removeList}
+            upList = {upList}
            />
         </div>
     )

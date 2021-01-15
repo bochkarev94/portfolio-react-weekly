@@ -3,12 +3,23 @@ import WeeklyForm from './weeklyForm';
 import {RiCloseCircleLine} from 'react-icons/ri';
 import {TiEdit} from 'react-icons/ti';
 
-function Weekly({lists, completeList}) {
+function Weekly({lists, completeList, removeList, upList}) {
 
     const [edit, setEdit]  = useState({
         id: null,
         value: ''
-    })
+    });
+
+    const upSubmit = (value) => {
+        upList(edit.id, value)
+        setEdit({
+            id: null,
+            value: ''
+        })
+    }
+    if (edit.id) {
+        return <WeeklyForm edit={edit} onSubmit={upSubmit}/>
+    }
 
     return lists.map((list, i) => {
         return <div className={list.isComplete ? 'list-row complete' : 'list-row'}
@@ -17,8 +28,14 @@ function Weekly({lists, completeList}) {
                     {list.text}
                 </div>
                 <div className='icons'>
-                    <RiCloseCircleLine/>
-                    <TiEdit/>
+                    <RiCloseCircleLine
+                    onClick={() => removeList(list.id)}
+                    className='delete-icon'
+                    />
+                    <TiEdit
+                    onClick={() => setEdit({id: list.id, value: list.text})}
+                    className='edit-icon'
+                    />
                 </div>
             </div>
     });
