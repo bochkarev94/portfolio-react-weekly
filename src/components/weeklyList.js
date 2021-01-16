@@ -40,7 +40,7 @@ function WeeklyList() {
 
     return (
         <div>
-           <h1>What's the Plan for Today</h1> 
+           <h1>Plans for today</h1> 
            <WeeklyForm onSubmit={addList}/>
            <Weekly
             lists = {lists}

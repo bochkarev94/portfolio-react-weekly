@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg,
+        rgba(48, 16, 255, 1) 0%,
+        rgba(100, 115, 255, 1) 100%);
+}
+.weekly__app {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    max-width: 620px;
+    min-height: 600px;
+    background: rgba(0, 255, 192, .3);
+    text-align: center;
+    margin: 128px auto;
+    border-radius: 20px;
+    padding-bottom: 32px;
+}
+
+h1 {
+    margin: 32px 0;
+    color: #ffffff;
+    font-size: 24px;
+}
+.complete {
+    text-decoration: line-through;
+    opacity: 0.4;
+}
+
+.weekly__form {
+    margin-bottom: 32px;
+}
+.weekly__input {
+    padding: 14px 32px 14px 16px;
+    border-radius: 5px;
+    border: 2px solid #fefe81;
+    outline: none;
+    width: 420px;
+    background: transparent;
+    color: #ffffff;
+}
+.weekly__input::placeholder {
+    color: #ffffff;
+}
+
+.weekly__btn {
+    padding: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    background: #5f008c;
+        color: #fff;
+        text-transform: capitalize;
+}
+.weekly__btn.edit {
+    background: #0000be;
+}
+
+.list__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    color: #fff;
+    background: #c60100;
+        padding: 16px;
+        border-radius: 5px;
+        width: 90%;
+}
+.list__row:nth-child(7n + 1) {
+    background: #d67200;;
+}
+
+.list__row:nth-child(7n + 2) {
+    background:#e1de00;
+}
+
+.list__row:nth-child(7n + 3) {
+    background: #00d500;
+}
+.list__row:nth-child(7n + 4) {
+    background: #00ae93;
+}
+
+.list__row:nth-child(7n + 5) {
+    background:#1900d6;
+}
+
+.list__row:nth-child(7n + 6) {
+    background: #e000c3;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+.delte__icon {
+    margin-right: 5px;
+    color: #fff;
+}
+
+.edit__icon {
+    color: #fff;
+}
+
+@media (max-width: 650px) {
+    .weekly__app {
+        margin: 128px 5px;
+    }
+    .weekly__input {
+        width: 320px;
+    }
+}
+@media (max-width: 560px) {
+
+    .weekly__input {
+        width: 220px;
+    }
+}
+
+

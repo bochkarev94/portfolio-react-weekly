@@ -22,7 +22,7 @@ function Weekly({lists, completeList, removeList, upList}) {
     }
 
     return lists.map((list, i) => {
-        return <div className={list.isComplete ? 'list-row complete' : 'list-row'}
+        return <div className={list.isComplete ? 'list__row complete' : 'list__row'}
             key={i}>
                 <div key={list.id} onClick={() => completeList(list.id)}>
                     {list.text}
@@ -30,11 +30,11 @@ function Weekly({lists, completeList, removeList, upList}) {
                 <div className='icons'>
                     <RiCloseCircleLine
                     onClick={() => removeList(list.id)}
-                    className='delete-icon'
+                    className='delete__icon'
                     />
                     <TiEdit
                     onClick={() => setEdit({id: list.id, value: list.text})}
-                    className='edit-icon'
+                    className='edit__icon'
                     />
                 </div>
             </div>
