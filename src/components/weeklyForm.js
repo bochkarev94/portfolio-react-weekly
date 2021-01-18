@@ -10,7 +10,15 @@ function WeeklyForm(props) {
     })
 
     const handleChange = (e) => {
-        setInput(e.target.value);
+        const value = e.target.value;
+
+        if (value.length <= 55) {
+            let r= /^[a-zа-яё,._\-/=!?1-90\s]+$/i;
+            if(!value || r.test(value)) {
+            
+            setInput(value);
+   }
+}
     };
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,6 +30,9 @@ function WeeklyForm(props) {
 
         setInput('');
     };
+
+   
+
     return (
         <form className='weekly__form' onSubmit={handleSubmit}>
             {props.edit ? ( 
